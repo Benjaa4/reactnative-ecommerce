@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "description": "Devices and gadgets including phones, laptops, and accessories."
+  },
+  {
+    "id": 2,
+    "name": "Books",
+    "description": "A variety of books across different genres and authors."
+  },
+  {
+    "id": 3,
+    "name": "Clothing",
+    "description": "Apparel and accessories for men, women, and children."
+  },
+  {
+    "id": 4,
+    "name": "Home Appliances",
+    "description": "Essential appliances for home use including kitchen and cleaning devices."
+  },
+  {
+    "id": 5,
+    "name": "Fitness",
+    "description": "Equipment and accessories for fitness and outdoor activities."
+  }
+]
