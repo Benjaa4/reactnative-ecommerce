@@ -7,9 +7,9 @@ import {
   Dimensions,
   Switch,
 } from "react-native";
-import { colors } from "../../global/colors";
+import { colors } from "../../global/Colors";
 import { useEffect, useState } from "react";
-import { useLoginMutation } from "../../services/authApi";
+import { useLoginMutation } from "../../services/AuthApi";
 import { useDispatch } from "react-redux";
 import { setUserEmail, setLocalId } from "../../store/slices/userSlice";
 import { saveSession, clearSession } from "../../db";

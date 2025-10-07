@@ -6,8 +6,8 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { colors } from "../../global/colors";
-import FlatCard from "../../components/FlatCard";
+import { colors } from "../../global/Colors";
+import Card from "../../components/Card";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { useSelector } from "react-redux";
 
@@ -25,7 +25,7 @@ const CartScreen = () => {
   );
 
   const renderCartItem = ({ item }) => (
-    <FlatCard style={styles.cartContainer}>
+    <Card style={styles.cartContainer}>
       <View>
         <Image
           source={{ uri: item.mainImage }}
@@ -48,7 +48,7 @@ const CartScreen = () => {
           />
         </Pressable>
       </View>
-    </FlatCard>
+    </Card>
   );
 
   return (

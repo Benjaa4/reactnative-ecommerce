@@ -1,19 +1,16 @@
 import { StyleSheet, Text, View, FlatList, Pressable } from "react-native";
 //import products from '../../data/products.json'
 import { useEffect, useState } from "react";
-import KarlaRegularText from "../../components/KarlaRegularFont";
-import Search from "../../components/Search";
+import Searchbar from "../../components/Searchbar";
 import { useSelector, useDispatch } from "react-redux";
 import { setProductSelected } from "../../store/slices/shopSlice";
-import { useGetProductsByCategoryQuery } from "../../services/shopApi";
+import { useGetProductsByCategoryQuery } from "../../services/ShopApi";
+import Searchbar from "../../components/Searchbar";
 
 const ProductsScreen = ({ navigation, route }) => {
   const [productsFiltered, setProductsFiltered] = useState([]);
   const [keyword, setKeyword] = useState("");
 
-  //console.log("Keyword: ",keyword)
-
-  //const { category } = route.params
   const category = useSelector((state) => state.shopReducer.categorySelected);
 
   const {
@@ -32,17 +29,13 @@ const ProductsScreen = ({ navigation, route }) => {
   const renderProductsItem = ({ item }) => (
     <View>
       <Pressable onPress={() => handleSelectProduct(item)}>
-        <KarlaRegularText style={{ fontSize: 16 }}>
-          {item.title}
-        </KarlaRegularText>
+        <Text style={{ fontSize: 16, fontFamily: "Prompt" }}>{item.title}</Text>
       </Pressable>
     </View>
   );
 
   useEffect(() => {
-    //const productsFilteredByCategory = products.filter(product => product.category.toLowerCase() === category.toLowerCase())
     if (keyword) {
-      //Re-filtramos la lista de productos según la búsqueda del usuario
       const productsFilteredByKeyword = productsFilteredByCategory.filter(
         (product) =>
           product.title.toLowerCase().includes(keyword.toLocaleLowerCase())
@@ -55,7 +48,7 @@ const ProductsScreen = ({ navigation, route }) => {
 
   return (
     <View>
-      <Search setKeyword={setKeyword} />
+      <Searchbar setKeyword={setKeyword} />
       <FlatList
         data={productsFiltered}
         keyExtractor={(item) => item.id}
@@ -66,5 +59,3 @@ const ProductsScreen = ({ navigation, route }) => {
 };
 
 export default ProductsScreen;
-
-const styles = StyleSheet.create({});

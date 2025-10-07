@@ -4,7 +4,7 @@ import shopReducer from "./slices/shopSlice";
 import cartReducer from "./slices/cartSlice";
 import userReducer from "./slices/userSlice";
 import { shopApi } from "../services/ShopApi";
-import { authApi } from "../services/authApi";
+import { authApi } from "../services/AuthApi";
 import { profileApi } from "../services/ProfileApi";
 
 export const store = configureStore({

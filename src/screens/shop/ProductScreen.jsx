@@ -7,7 +7,7 @@ import {
   ScrollView,
   useWindowDimensions,
 } from "react-native";
-import { colors } from "../../global/colors";
+import { colors } from "../../global/Colors";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemTocart } from "../../store/slices/cartSlice";
 

@@ -6,17 +6,14 @@ import {
   FlatList,
   Pressable,
 } from "react-native";
-//import categories from '../../data/categories.json'
-import FlatCard from "../../components/FlatCard";
+
+import Card from "../../components/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { setCategorySelected } from "../../store/slices/shopSlice";
-import { useGetCategoriesQuery } from "../../services/shopApi";
+import { useGetCategoriesQuery } from "../../services/ShopApi";
 
 const CategoriesScreen = ({ navigation }) => {
-  //const categories = useSelector(state=>state.shopReducer.categories)
   const { data: categories, isLoading, error } = useGetCategoriesQuery();
-
-  //console.log("Categories desde firebase",cateogires, isLoading,error )
 
   const dispatch = useDispatch();
 
@@ -26,10 +23,9 @@ const CategoriesScreen = ({ navigation }) => {
   };
 
   const renderCategoryItem = ({ item }) => {
-    //console.log(item)
     return (
       <Pressable onPress={() => handleSelectCategory(item.title)}>
-        <FlatCard style={styles.cardCustom}>
+        <Card style={styles.cardCustom}>
           <Text style={styles.title}>{item.title}</Text>
           <Image
             width={120}
@@ -37,7 +33,7 @@ const CategoriesScreen = ({ navigation }) => {
             source={{ uri: item.image }}
             resizeMode="contain"
           />
-        </FlatCard>
+        </Card>
       </Pressable>
     );
   };

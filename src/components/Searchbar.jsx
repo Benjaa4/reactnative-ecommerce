@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
-import { Colors } from "../global/Colors";
+import { Colors } from "../global/Colors.js";
 import { useState } from "react";
 
 const Searchbar = ({ setKeyword }) => {
